@@ -2,6 +2,7 @@
 $racine = dirname(__FILE__);
 
 include "$racine/controleur/controleurPrincipal.php";
+include_once "$racine/modele/authentification.inc.php"; // pour pouvoir utiliser isLoggedOn()
 
 if (isset($_GET["action"])) {
     $action = $_GET["action"];
@@ -9,16 +10,6 @@ if (isset($_GET["action"])) {
 else {
     $action = "defaut";
 }
-
-$option="SLAM";
-$ville = "Vannes";
-
-setlocale(LC_TIME, "fr_FR", "French");
-$date = date("Y-m-d");
-$date = strftime("%A %d %B %G", strtotime($date));
-$date = ucfirst($date);
-
-
 
 $fichier = controleurPrincipal($action);
 

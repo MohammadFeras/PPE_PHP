@@ -3,7 +3,9 @@
 include ("../metier/ppe-php.php");
 include 'DAO.php';
 include_once 'bd.Connexion.php';
-/*
+
+  class FormationDAO extends \DAO
+    {
   function __construct() {
   parent::__construct("ID", "formation");
   // echo "constructeur de DAO ", __NAMESPACE__,"<br/>";
@@ -62,7 +64,7 @@ include_once 'bd.Connexion.php';
   $stmt->execute();
   $objet->setNumPil(parent::getLastKey());
   }
-
+/*
   function getFormations() {
   $sql = "SELECT * FROM formation;";
   $rep = "<table class=\"table table-striped\">";
@@ -76,6 +78,7 @@ include_once 'bd.Connexion.php';
   return $rep . "</table>";
   }
  */
+    }
 
 function getFormations() {
     $resultat = array();

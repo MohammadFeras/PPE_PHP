@@ -26,6 +26,7 @@
                 <td></td><td class="colonne-acqui">N.A</td><td class="colonne-acqui">P.A</td><td class="colonne-acqui">A.N.S</td><td class="colonne-acqui">D</td>
 
                 <?php
+               
 
                 for ($i = 1; $i <= 10; $i++) {
                     $tableau[] = 'Compétence n°' . $i;

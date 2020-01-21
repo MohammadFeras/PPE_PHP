@@ -1,0 +1,23 @@
+table, th, td {
+  border: 1px solid black;
+  margin-left: 50px;
+  margin-top: 20px;
+  font-size: 30px;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+.colonne-acqui{
+    width: 15%;
+    text-align: center;
+}
+
+.checkbox{
+    width:30px;
+    height:30px;
+    alignment-adjust: center;
+}
+
+#getChoice{
+    margin-left: 40%;
+}
+

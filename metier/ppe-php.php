@@ -1,4 +1,5 @@
 <?php
+namespace ppe_php {
 
     class admin {
 
@@ -61,10 +62,10 @@
             return $this;
         }
 
-        function __toString() {
-			$rep = "<div class=\"admin\">$this->IdA $this->Nom $this->Prenom $this->Email $this->Agance </div>";
-			return $rep;
-		}
+        /* function __toString() {
+          $rep = "<div class=\"pilote\">$this->numPil $this->nomPil $this->adr $this->sal</div>";
+          return $rep;
+          } */
     }
 
 
@@ -330,7 +331,7 @@ class formation {
                
 		
 		/*function __toString() {
-			$rep = "<div class=\"Admin\">$this->IdA $this->Nom $this->Prenom $this->Email $this->Agance </div>";
+			$rep = "<div class=\"pilote\">$this->numPil $this->nomPil $this->adr $this->sal</div>";
 			return $rep;
 		}*/
 
@@ -340,8 +341,7 @@ class formation {
 
 	
 	
-        
+        }
 	
 	
 ?>
->>>>>>> 2a751b7 

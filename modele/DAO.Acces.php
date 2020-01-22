@@ -3,9 +3,8 @@
 include ("../metier/ppe-php.php");
 include 'DAO.php';
 include_once 'bd.Connexion.php';
-  class AccesDAO extends \DAO
-    {
 
+/*
 function __construct() {
     parent::__construct("ID", "acces");
     // echo "constructeur de DAO ", __NAMESPACE__,"<br/>";
@@ -64,7 +63,7 @@ function create($objet) {
     $stmt->execute();
     $objet->setNumPil(parent::getLastKey());
 }
-
+*/
 /*
 function getAcces() {
     $sql = "SELECT * FROM acces;";
@@ -77,9 +76,8 @@ function getAcces() {
         $rep .= "</td><td>" . $row["Grain_de_sel"] . "</td></tr>";
     }
     return $rep . "</table>";
-}*/
-  }
- 
+}
+*/
 
 function getAcces() {
     $resultat = array();

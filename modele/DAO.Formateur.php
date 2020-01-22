@@ -4,8 +4,7 @@ include ("../metier/ppe-php.php");
 include 'DAO.php';
 include_once 'bd.Connexion.php';
 
-  class FormateurDAO extends \DAO
-    {
+/*
   function __construct() {
   parent::__construct("IdF", "formateur");
   // echo "constructeur de DAO ", __NAMESPACE__,"<br/>";
@@ -70,7 +69,7 @@ include_once 'bd.Connexion.php';
   $objet->setNumPil(parent::getLastKey());
   }
 
-/*
+
   function getFormateurs() {
   $sql = "SELECT * FROM formateur;";
   $rep = "<table class=\"table table-striped\">";
@@ -83,8 +82,8 @@ include_once 'bd.Connexion.php';
   $rep .= "</td><td>" . $row["Agance"] . "</td></tr>";
   }
   return $rep . "</table>";
-  }*/
- }
+  }
+ */
 
 function getFormateurs($idR) {
     $resultat = array();

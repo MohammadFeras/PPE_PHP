@@ -1,11 +1,9 @@
 <?php
 
-include ("../metier/ppe-php.php");
-include 'DAO.php';
+//include ("../metier/ppe-php.php");
+//include 'DAO.php';
 include_once 'bd.Connexion.php';
-
-  class FormationDAO extends \DAO
-    {
+/*
   function __construct() {
   parent::__construct("ID", "formation");
   // echo "constructeur de DAO ", __NAMESPACE__,"<br/>";
@@ -64,7 +62,7 @@ include_once 'bd.Connexion.php';
   $stmt->execute();
   $objet->setNumPil(parent::getLastKey());
   }
-/*
+
   function getFormations() {
   $sql = "SELECT * FROM formation;";
   $rep = "<table class=\"table table-striped\">";
@@ -78,13 +76,12 @@ include_once 'bd.Connexion.php';
   return $rep . "</table>";
   }
  */
-    }
 
 function getFormations() {
     $resultat = array();
     try {
-        $cnx = connexionPDO();
-        $req = $cnx->prepare("SELECT * FROM formation");
+        $cnx = getInstance();
+        $req = $cnx->prepare("SELECT DISTINCT Agence FROM formation");
         $req->execute();
         $ligne = $req->fetch(PDO::FETCH_ASSOC);
         while ($ligne) {
@@ -98,5 +95,40 @@ function getFormations() {
     return $resultat;
 }
 
-print_r(getFormations());
+function getFormationsByName($agence) {
+    $resultat = array();
+    try {
+        $cnx = getInstance();
+        $req = $cnx->prepare("SELECT Nom_Formation FROM formation where Agence='" . $agence . "'");
+        $req->execute();
+        $ligne = $req->fetch(PDO::FETCH_ASSOC);
+        while ($ligne) {
+            $resultat[] = $ligne;
+            $ligne = $req->fetch(PDO::FETCH_ASSOC);
+        }
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage();
+        die();
+    }
+    return $resultat;
+}
+
+function getAgences() {
+    $resultat = array();
+    try {
+        $cnx = getInstance();
+        $req = $cnx->prepare("SELECT DISTINCT Agence FROM Formation");
+        $req->execute();
+
+        $ligne = $req->fetch(PDO::FETCH_ASSOC);
+        while ($ligne) {
+            $resultat[] = $ligne;
+            $ligne = $req->fetch(PDO::FETCH_ASSOC);
+        }
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage();
+        die();
+    }
+    return $resultat;
+}
 

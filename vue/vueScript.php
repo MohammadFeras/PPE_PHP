@@ -15,6 +15,7 @@
     <script src="vue/js/agency.min.js"></script>
     
     <script src ="vue/js/admin.js"></script>
+    <script src ="vue/js/AjoutFormation.js"></script>
 
 </body>
 

@@ -3,8 +3,7 @@
 include ("../metier/ppe-php.php");
 include 'DAO.php';
 include_once 'bd.Connexion.php';
-  class StagiaireDAO extends \DAO
-    {
+/*
   function __construct() {
   parent::__construct("IdS", "stagiaire");
   // echo "constructeur de DAO ", __NAMESPACE__,"<br/>";
@@ -84,8 +83,7 @@ include_once 'bd.Connexion.php';
   $stmt->execute();
   $objet->setNumPil(parent::getLastKey());
   }
- 
-}
+ */
 
 function getStagiaires() {
     $resultat = array();
@@ -112,6 +110,7 @@ print_r(getStagiaires());
 
 $test = getStagiaires();
 
+echo 'test';
 for ($i = 0; $i < count($test); $i++){
     foreach ($test[$i] as $value) {
         echo $value . "</br>";

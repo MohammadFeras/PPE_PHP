@@ -4,8 +4,7 @@ include ("../metier/ppe-php.php");
 include 'DAO.php';
 include_once 'bd.Connexion.php';
 
-class PAdminDAO extends \DAO
-    {
+/*
   function __construct() {
   parent::__construct("IdA", "admin");
   // echo "constructeur de DAO ", __NAMESPACE__,"<br/>";
@@ -68,7 +67,7 @@ class PAdminDAO extends \DAO
   $stmt->bindParam(':Agance', $agance);
   $stmt->execute();
   $objet->setNumPil(parent::getLastKey());
-  }/*
+  }
 
   static function getAdmins() {
   $sql = "SELECT * FROM admin;";
@@ -84,13 +83,11 @@ class PAdminDAO extends \DAO
   return $rep . "</table>";
   }
  */
-    }
 
 function getAdmins() {
     $resultat = array();
-    
     try {
-        $cnx = getInstance();
+        $cnx = connexionPDO();
         $req = $cnx->prepare("SELECT * FROM admin");
         $req->execute();
 
@@ -104,16 +101,4 @@ function getAdmins() {
         die();
     }
     return $resultat;
-    }
-
-echo "<pre>";
-print_r(getAdmins());
-
-$test = getAdmins();
-
-for ($i = 0; $i < count($test); $i++){
-    foreach ($test[$i] as $value) {
-        echo $value . "</br>";
-    }
-    echo "</br>";
 }

@@ -1,3 +1,5 @@
+/*
+ * 
 function getChoice() {
     let choice_value;
     
@@ -19,3 +21,4 @@ function getChoice() {
 
 let p = document.getElementById("getChoice");
 p.onclick = getChoice;
+ */

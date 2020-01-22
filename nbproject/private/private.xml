@@ -2,6 +2,29 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/xampp/htdocs/www/modele/DAO.Admin.php</file>
+            <file>file:/C:/xampp/htdocs/www/vue/footer.html.php</file>
+            <file>file:/C:/xampp/htdocs/www/modele/authentification.inc.php</file>
+            <file>file:/C:/xampp/htdocs/www/vue/vueAjoutFormat.php</file>
+            <file>file:/C:/xampp/htdocs/www/controleur/controleurPrincipal.php</file>
+            <file>file:/C:/xampp/htdocs/www/controleur/pageAccueil.php</file>
+            <file>file:/C:/xampp/htdocs/www/vue/vueNavigation.php</file>
+            <file>file:/C:/xampp/htdocs/www/controleur/pageAdmin.php</file>
+            <file>file:/C:/xampp/htdocs/www/vue/js/admin.js</file>
+            <file>file:/C:/xampp/htdocs/www/controleur/pageAjoutFormat.php</file>
+            <file>file:/C:/xampp/htdocs/www/modele/DAO.Stagiaire.php</file>
+            <file>file:/C:/xampp/htdocs/www/metier/ppe-php.php</file>
+            <file>file:/C:/xampp/htdocs/www/modele/DAO.Acces.php</file>
+            <file>file:/C:/xampp/htdocs/www/controleur/pageConnexion.php</file>
+            <file>file:/C:/xampp/htdocs/www/modele/DAO.Formateur.php</file>
+            <file>file:/C:/xampp/htdocs/www/controleur/maPageBootstrap.php</file>
+            <file>file:/C:/xampp/htdocs/www/vue/vueContact.php</file>
+            <file>file:/C:/xampp/htdocs/www/modele/bd.Connexion.php</file>
+            <file>file:/C:/xampp/htdocs/www/vue/js/AjoutFormation.js</file>
+            <file>file:/C:/xampp/htdocs/www/modele/DAO.Formation.php</file>
+            <file>file:/C:/xampp/htdocs/www/vue/vueTableauAdmin.php</file>
+            <file>file:/C:/xampp/htdocs/www/vue/headerConnexion.html.php</file>
+        </group>
     </open-files>
 </project-private>

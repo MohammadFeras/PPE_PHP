@@ -1,4 +1,4 @@
-<link href="vue/css/connexion.css" rel="stylesheet" type="text/css">
+
 <!-- Header -->
 <header>
     <div id="container">

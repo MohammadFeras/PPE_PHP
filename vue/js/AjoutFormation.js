@@ -1,23 +1,34 @@
-
-let name;
-
-function post_ajax(idSelect,idWrite) {
-    name = document.getElementById(idSelect).value;
-    if (name != "default") {
+$(document).ready(function () {
+    $("#agence-select").change(function () {
+        let agenceNameJS = $(this).val();
         $.ajax({
-            url: 'fonctions.php',
-            data: {
-                nameF: name
-            },
+            url: 'metier/fonctions.php',
+            data: {agenceNamePHP: agenceNameJS},
             type: "POST",
-            async: true,
-            //cache: false,
-            success: function (aresult) {
-                $(idWrite).html(aresult);
-            },
-            dataType: "html"
-
+            //async: true,
+            success: function (texte) {
+                $("#formation-select").empty();
+                $("#formation-select").append("<option value ='default' selected='selected'>Choisissez votre Formation</option>");
+                $("#formation-select").append(texte);
+            }
         });
-    }
-}
-
+    });
+    
+    $("#formation-select").change(function () {
+        let formationNameJS = $(this).val();
+        $.ajax({
+            url: 'metier/fonctions.php',
+            data: {formationNamePHP: formationNameJS},
+            type: "POST",
+            //async: true,
+            success: function (texte) {
+                $("#promo-select").empty();
+                $("#promo-select").append("<option value ='default' selected='selected'>Choisissez votre Promotion</option>");
+                $("#promo-select").append(texte);
+            }
+        });
+    });
+    
+     
+    
+});

@@ -1,37 +1,44 @@
 <?php
 
-abstract class DAO {
+namespace DAO {
 
-    abstract function read($id);
+    use DB\Connexion\Connexion;
 
-    abstract function update($objet);
+include ("../metier/Aero.php");
 
-    abstract function delete($objet);
+    abstract class DAO {
 
-    abstract function create($objet);
+        abstract function read($id);
 
-    protected $key;
-    protected $table;
+        abstract function update($objet);
 
-    function __construct($key, $table) {
-        $this->key = $key;
-        $this->table = $table;
-        // echo "constructeur de DAO ", __NAMESPACE__,"<br/>";
-    }
+        abstract function delete($objet);
 
-    function getLastKey() {
+        abstract function create($objet);
 
-        return Connexion::getInstance()->lastInsertId();
+        protected $key;
+        protected $table;
 
-        /* Version à la main qui récupère le max de la clé, qui n'assure pas que ce soit la bonne clé !
-          $sql = "SELECT Max($this->key) as max FROM $this->table";
-          $stmt = Connexion::getInstance()->prepare($sql);
-          $stmt->execute();
+        function __construct($key, $table) {
+            $this->key = $key;
+            $this->table = $table;
+            // echo "constructeur de DAO ", __NAMESPACE__,"<br/>";
+        }
 
-          $row = $stmt->fetch();
-          $newKey = $row["max"];
-          return $newKey; */
+        function getLastKey() {
+
+            return Connexion::getInstance()->lastInsertId();
+
+            /* Version à la main qui récupère le max de la clé, qui n'assure pas que ce soit la bonne clé !
+              $sql = "SELECT Max($this->key) as max FROM $this->table";
+              $stmt = Connexion::getInstance()->prepare($sql);
+              $stmt->execute();
+
+              $row = $stmt->fetch();
+              $newKey = $row["max"];
+              return $newKey; */
+        }
+
     }
 
 }
-

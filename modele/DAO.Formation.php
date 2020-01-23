@@ -99,7 +99,7 @@ function getFormationsByName($agence) {
     $resultat = array();
     try {
         $cnx = getInstance();
-        $req = $cnx->prepare("SELECT Nom_Formation FROM formation where Agence='" . $agence . "'");
+        $req = $cnx->prepare("SELECT Nom_Formation FROM formation WHERE Agence= '" . $agence . "'");
         $req->execute();
         $ligne = $req->fetch(PDO::FETCH_ASSOC);
         while ($ligne) {
@@ -117,7 +117,26 @@ function getAgences() {
     $resultat = array();
     try {
         $cnx = getInstance();
-        $req = $cnx->prepare("SELECT DISTINCT Agence FROM Formation");
+        $req = $cnx->prepare("SELECT DISTINCT Agence FROM formation");
+        $req->execute();
+
+        $ligne = $req->fetch(PDO::FETCH_ASSOC);
+        while ($ligne) {
+            $resultat[] = $ligne;
+            $ligne = $req->fetch(PDO::FETCH_ASSOC);
+        }
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage();
+        die();
+    }
+    return $resultat;
+}
+
+function getPromosByName($formation) {
+    $resultat = array();
+    try {
+        $cnx = getInstance();
+        $req = $cnx->prepare("SELECT Promo FROM formation WHERE Nom_Formation= '" . $formation . "'");
         $req->execute();
 
         $ligne = $req->fetch(PDO::FETCH_ASSOC);

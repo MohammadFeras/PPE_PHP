@@ -1,7 +1,7 @@
 <?php
 
-include ("../metier/ppe-php.php");
-include 'DAO.php';
+//include ("../metier/ppe-php.php");
+//include 'DAO.php';
 include_once 'bd.Connexion.php';
 /*
   function __construct() {
@@ -105,20 +105,25 @@ function getStagiaires() {
     return $resultat;
 }
 
-echo "<pre>";
-print_r(getStagiaires());
+function getStagiairesByAgenceEtFormationEtPromotion($agence,$formation,$promotion) {
+    $resultat = array();
 
-$test = getStagiaires();
+    try {
+        $cnx = getInstance();
+        $req = $cnx->prepare("SELECT nom , prenom FROM stagiaire s JOIN formation f on f.ID = s.ID_Formation WHERE s.Agence ='".$agence."' AND f.Nom_Formation ='".$formation."' AND Promo ='". $promotion."'");
+        $req->execute();
 
-echo 'test';
-for ($i = 0; $i < count($test); $i++){
-    foreach ($test[$i] as $value) {
-        echo $value . "</br>";
+        $ligne = $req->fetch(PDO::FETCH_ASSOC);
+        while ($ligne) {
+            $resultat[] = $ligne;
+            $ligne = $req->fetch(PDO::FETCH_ASSOC);
+        }
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage();
+        die();
     }
-    echo "</br>";
+    return $resultat;
 }
-    
-?>
 
 
 

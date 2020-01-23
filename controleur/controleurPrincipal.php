@@ -7,6 +7,7 @@ function controleurPrincipal($action) {
     $lesActions["formateur"] = "pageFormateur.php";
     $lesActions["stagiaire"] = "pageStagiaire.php";
     $lesActions["ajoutFormat"] = "pageAjoutFormat.php";
+    $lesActions["tableau"] = "pageTableau.php";
 
     if (array_key_exists($action, $lesActions)) {
         return $lesActions[$action];

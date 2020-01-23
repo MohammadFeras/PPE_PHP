@@ -4,6 +4,7 @@ if ($_SERVER["SCRIPT_FILENAME"] == __FILE__) {
     $racine = "..";
 }
 include_once "$racine/modele/DAO.Formation.php";
+include_once "$racine/modele/DAO.Stagiaire.php";
 
 
 $listeAgences = getAgences();

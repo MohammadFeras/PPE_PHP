@@ -4,7 +4,6 @@ namespace DAO {
 
     use DB\Connexion\Connexion;
 
-include ("../metier/Aero.php");
 
     abstract class DAO {
 

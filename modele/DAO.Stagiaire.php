@@ -110,7 +110,7 @@ function getStagiairesByAgenceEtFormationEtPromotion($agence,$formation,$promoti
 
     try {
         $cnx = getInstance();
-        $req = $cnx->prepare("SELECT nom , prenom FROM stagiaire s JOIN formation f on f.ID = s.ID_Formation WHERE s.Agence ='".$agence."' AND f.Nom_Formation ='".$formation."' AND Promo ='". $promotion."'");
+        $req = $cnx->prepare("SELECT nom , prenom FROM stagiaire s JOIN formation f on f.ID = s.ID_Formation WHERE f.Agence ='".$agence."' AND f.Nom_Formation ='".$formation."' AND Promo ='". $promotion."'");
         $req->execute();
 
         $ligne = $req->fetch(PDO::FETCH_ASSOC);
